@@ -73,7 +73,9 @@ setup(
     # Package requirements
     install_requires=[
         "openc2",
-        "stix2",
+        # openc2 1.0.5 (latest) is not compatible with the property API of
+        # stix2 >= 3.0 (EmptyListProperty.clean() signature)
+        "stix2<3",
         "dxlbootstrap>=0.2.0",
         "dxlclient>=4.1.0.184"
     ],
